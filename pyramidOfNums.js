@@ -20,6 +20,36 @@ function pyramidPattern(n) {
 
 console.log(pyramidPattern(5));
 
+// ---------------------------------------------------- //
+
+function pyramidPattern2(n) {
+  let space = n - 1;
+  let nums = 1;
+  let pattern = "";
+
+  for (i = 1; i <= n; i++) {
+    for (j = 1; j <= space; j++) {
+      pattern += " ";
+    }
+    for (k = 1; k <= nums; k++) {
+      if (k > i) {
+        pattern += i - (k - i);
+      } else {
+        pattern += k;
+      }
+    }
+    pattern += "\n";
+    space -= 1;
+    nums += 2;
+  }
+
+  return pattern;
+}
+
+console.log(pyramidPattern2(9));
+
+// ---------------------------------------------------- //
+
 function binaryPyramidPattern(n) {
   let space = n - 1;
   let nums = 1;
@@ -40,7 +70,9 @@ function binaryPyramidPattern(n) {
   return pattern;
 }
 
-console.log(binaryPyramidPattern(5));
+console.log(binaryPyramidPattern(10));
+
+// ---------------------------------------------------- //
 
 function binaryPyramidPattern2(n) {
   let space = n - 1;
@@ -63,4 +95,4 @@ function binaryPyramidPattern2(n) {
   return pattern;
 }
 
-console.log(binaryPyramidPattern2(5));
+console.log(binaryPyramidPattern2(10));

@@ -41,3 +41,26 @@ function binaryPyramidPattern(n) {
 }
 
 console.log(binaryPyramidPattern(5));
+
+function binaryPyramidPattern2(n) {
+  let space = n - 1;
+  let nums = 1;
+  let pattern = "";
+
+  for (i = 1; i <= n; i++) {
+    for (j = 1; j <= space; j++) {
+      pattern += " ";
+    }
+    for (k = 1; k <= nums; k++) {
+      if (k === 1 || k === nums) pattern += 1;
+      else pattern += 0;
+    }
+    pattern += "\n";
+    space -= 1;
+    nums += 2;
+  }
+
+  return pattern;
+}
+
+console.log(binaryPyramidPattern2(5));

@@ -1,16 +1,18 @@
 function isPalindrome(str) {
+  // Optional: Preprocess (Ignore case, spaces, punctuation)
+  str = str.toLowerCase().replace(/[^a-z0-9]/g, "");
   let left = 0;
   let right = str.length - 1;
 
   while (left < right) {
     if (str[left] !== str[right]) {
-      return false;
+      return false; // mismatch found → not a palindrome
     }
     left++;
     right--;
   }
 
-  return true;
+  return true; // no mismatches → palindrome
 }
 
 // function isPalindrome(str) {
@@ -18,4 +20,4 @@ function isPalindrome(str) {
 //   return str === reverse;
 // }
 
-console.log(isPalindrome("madama"));
+console.log(isPalindrome("m ad ,am, "));
